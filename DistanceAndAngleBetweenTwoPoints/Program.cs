@@ -24,13 +24,15 @@ namespace DistanceAndAngleBetweenTwoPoints
             float deltaY = y2 - y1;
             //Считаем фактическое расстояние между точками.
             float distance = (float)Math.Sqrt(Math.Pow(deltaX, 2) + Math.Pow(deltaY, 2));
-            //Считаем угол и переводим его в градусы
+            //Считаем угол и переводим его из радиан в градусы
             float angle = (float)(Math.Atan2(deltaY, deltaX) * 180/Math.PI);
             //Выводим результат на экран
-            //Обращу внимание, что отрицательный угол обозначает вращение по часовой
+            //Отрицательный угол обозначает вращение по часовой
             //стрелке, а положительный - против часовой стрелки.
-            Console.WriteLine("Расстояние между точками: {0}{2}Угол между точками: {1}",
-                distance, angle, Environment.NewLine);
+            Console.WriteLine(
+                "Расстояние между точками:        {0} условных единиц.\n" +
+                "Угол между точками:              {1} градусов.",
+                distance, angle);
             Console.ReadKey();
         }
     }
